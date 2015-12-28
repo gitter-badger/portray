@@ -2,12 +2,14 @@
   "name": "characterize",
   "version": "0.0.1",
   "description": "Obtain metadata for games",
-  "main": "main.js",
+  "main": "index.js",
   "author": "Simon W. Jackson",
   "dependencies": {
-    "bluebird": "latest",
+    "bluebird": "^3.1.1",
     "cheerio": "latest",
     "lodash": "^3.10.1",
-    "request-promise": "^1.0.2"
+    "request-promise": "^1.0.2",
+    "string_score": "^0.1.22",
+    "tgdb-api": "^0.2.1"
   }
 }
