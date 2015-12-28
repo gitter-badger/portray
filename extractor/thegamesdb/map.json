@@ -1,0 +1,409 @@
+{
+	"platform": {
+		"3do": {
+			"id": 25,
+			"name": "3DO",
+			"alias": "3do"
+		},
+		"acorn-archimedes": {
+			"id": 4944,
+			"name": "Acorn Archimedes",
+			"alias": "acorn-archimedes"
+		},
+		"amiga": {
+			"id": 4911,
+			"name": "Amiga",
+			"alias": "amiga"
+		},
+		"amiga-cd32": {
+			"id": 4947,
+			"name": "Amiga CD32",
+			"alias": "amiga-cd32"
+		},
+		"amstrad-cpc": {
+			"id": 4914,
+			"name": "Amstrad CPC",
+			"alias": "amstrad-cpc"
+		},
+		"android": {
+			"id": 4916,
+			"name": "Android",
+			"alias": "android"
+		},
+		"apple2": {
+			"id": 4942,
+			"name": "Apple II",
+			"alias": "apple2"
+		},
+		"arcade": {
+			"id": 23,
+			"name": "Arcade",
+			"alias": "arcade"
+		},
+		"atari-2600": {
+			"id": 22,
+			"name": "Atari 2600",
+			"alias": "atari-2600"
+		},
+		"atari-5200": {
+			"id": 26,
+			"name": "Atari 5200",
+			"alias": "atari-5200"
+		},
+		"atari-7800": {
+			"id": 27,
+			"name": "Atari 7800",
+			"alias": "atari-7800"
+		},
+		"atari800": {
+			"id": 4943,
+			"name": "Atari 800",
+			"alias": "atari800"
+		},
+		"atari-jaguar": {
+			"id": 28,
+			"name": "Atari Jaguar",
+			"alias": "atari-jaguar"
+		},
+		"atari-jaguar-cd": {
+			"id": 29,
+			"name": "Atari Jaguar CD",
+			"alias": "atari-jaguar-cd"
+		},
+		"atari-lynx": {
+			"id": 4924,
+			"name": "Atari Lynx",
+			"alias": "atari-lynx"
+		},
+		"atari-st": {
+			"id": 4937,
+			"name": "Atari ST",
+			"alias": "atari-st"
+		},
+		"atari-xe": {
+			"id": 30,
+			"name": "Atari XE",
+			"alias": "atari-xe"
+		},
+		"colecovision": {
+			"id": 31,
+			"name": "Colecovision",
+			"alias": "colecovision"
+		},
+		"c128": {
+			"id": 4946,
+			"name": "Commodore 128",
+			"alias": "c128"
+		},
+		"commodore-64": {
+			"id": 40,
+			"name": "Commodore 64",
+			"alias": "commodore-64"
+		},
+		"commodore-vic20": {
+			"id": 4945,
+			"name": "Commodore VIC-20",
+			"alias": "commodore-vic20"
+		},
+		"dragon32-64": {
+			"id": 4952,
+			"name": "Dragon 32/64",
+			"alias": "dragon32-64"
+		},
+		"fairchild": {
+			"id": 4928,
+			"name": "Fairchild Channel F",
+			"alias": "fairchild"
+		},
+		"fds": {
+			"id": 4936,
+			"name": "Famicom Disk System",
+			"alias": "fds"
+		},
+		"fmtowns": {
+			"id": 4932,
+			"name": "FM Towns Marty",
+			"alias": "fmtowns"
+		},
+		"game-and-watch": {
+			"id": 4950,
+			"name": "Game &amp;amp; Watch",
+			"alias": "game-and-watch"
+		},
+		"game-com": {
+			"id": 4940,
+			"name": "Game.com",
+			"alias": "game-com"
+		},
+		"lcd": {
+			"id": 4951,
+			"name": "Handheld Electronic Games (LCD)",
+			"alias": "lcd"
+		},
+		"intellivision": {
+			"id": 32,
+			"name": "Intellivision",
+			"alias": "intellivision"
+		},
+		"ios": {
+			"id": 4915,
+			"name": "iOS",
+			"alias": "ios"
+		},
+		"mac-os": {
+			"id": 37,
+			"name": "Mac OS",
+			"alias": "mac-os"
+		},
+		"magnavox-odyssey-2": {
+			"id": 4927,
+			"name": "Magnavox Odyssey 2",
+			"alias": "magnavox-odyssey-2"
+		},
+		"megaduck": {
+			"id": 4948,
+			"name": "Mega Duck",
+			"alias": "megaduck"
+		},
+		"microsoft-xbox": {
+			"id": 14,
+			"name": "Microsoft Xbox",
+			"alias": "microsoft-xbox"
+		},
+		"microsoft-xbox-360": {
+			"id": 15,
+			"name": "Microsoft Xbox 360",
+			"alias": "microsoft-xbox-360"
+		},
+		"microsoft-xbox-one": {
+			"id": 4920,
+			"name": "Microsoft Xbox One",
+			"alias": "microsoft-xbox-one"
+		},
+		"msx": {
+			"id": 4929,
+			"name": "MSX",
+			"alias": "msx"
+		},
+		"ngage": {
+			"id": 4938,
+			"name": "N-Gage",
+			"alias": "ngage"
+		},
+		"neo-geo-pocket": {
+			"id": 4922,
+			"name": "Neo Geo Pocket",
+			"alias": "neo-geo-pocket"
+		},
+		"neo-geo-pocket-color": {
+			"id": 4923,
+			"name": "Neo Geo Pocket Color",
+			"alias": "neo-geo-pocket-color"
+		},
+		"neogeo": {
+			"id": 24,
+			"name": "NeoGeo",
+			"alias": "neogeo"
+		},
+		"nintendo-3ds": {
+			"id": 4912,
+			"name": "Nintendo 3DS",
+			"alias": "nintendo-3ds"
+		},
+		"nintendo-64": {
+			"id": 3,
+			"name": "Nintendo 64",
+			"alias": "nintendo-64"
+		},
+		"nintendo-ds": {
+			"id": 8,
+			"name": "Nintendo DS",
+			"alias": "nintendo-ds"
+		},
+		"nintendo-entertainment-system-nes": {
+			"id": 7,
+			"name": "Nintendo Entertainment System (NES)",
+			"alias": "nintendo-entertainment-system-nes"
+		},
+		"nintendo-gameboy": {
+			"id": 4,
+			"name": "Nintendo Game Boy",
+			"alias": "nintendo-gameboy"
+		},
+		"nintendo-gameboy-advance": {
+			"id": 5,
+			"name": "Nintendo Game Boy Advance",
+			"alias": "nintendo-gameboy-advance"
+		},
+		"nintendo-gameboy-color": {
+			"id": 41,
+			"name": "Nintendo Game Boy Color",
+			"alias": "nintendo-gameboy-color"
+		},
+		"nintendo-gamecube": {
+			"id": 2,
+			"name": "Nintendo GameCube",
+			"alias": "nintendo-gamecube"
+		},
+		"nintendo-virtual-boy": {
+			"id": 4918,
+			"name": "Nintendo Virtual Boy",
+			"alias": "nintendo-virtual-boy"
+		},
+		"nintendo-wii": {
+			"id": 9,
+			"name": "Nintendo Wii",
+			"alias": "nintendo-wii"
+		},
+		"nintendo-wii-u": {
+			"id": 38,
+			"name": "Nintendo Wii U",
+			"alias": "nintendo-wii-u"
+		},
+		"nuon": {
+			"id": 4935,
+			"name": "Nuon",
+			"alias": "nuon"
+		},
+		"ouya": {
+			"id": 4921,
+			"name": "Ouya",
+			"alias": "ouya"
+		},
+		"pc": {
+			"id": 1,
+			"name": "PC",
+			"alias": "pc"
+		},
+		"pc88": {
+			"id": 4933,
+			"name": "PC-88",
+			"alias": "pc88"
+		},
+		"pc98": {
+			"id": 4934,
+			"name": "PC-98",
+			"alias": "pc98"
+		},
+		"pcfx": {
+			"id": 4930,
+			"name": "PC-FX",
+			"alias": "pcfx"
+		},
+		"philips-cd-i": {
+			"id": 4917,
+			"name": "Philips CD-i",
+			"alias": "philips-cd-i"
+		},
+		"sega-32x": {
+			"id": 33,
+			"name": "Sega 32X",
+			"alias": "sega-32x"
+		},
+		"sega-cd": {
+			"id": 21,
+			"name": "Sega CD",
+			"alias": "sega-cd"
+		},
+		"sega-dreamcast": {
+			"id": 16,
+			"name": "Sega Dreamcast",
+			"alias": "sega-dreamcast"
+		},
+		"sega-game-gear": {
+			"id": 20,
+			"name": "Sega Game Gear",
+			"alias": "sega-game-gear"
+		},
+		"sega-genesis": {
+			"id": 18,
+			"name": "Sega Genesis",
+			"alias": "sega-genesis"
+		},
+		"sega-master-system": {
+			"id": 35,
+			"name": "Sega Master System",
+			"alias": "sega-master-system"
+		},
+		"sega-saturn": {
+			"id": 17,
+			"name": "Sega Saturn",
+			"alias": "sega-saturn"
+		},
+		"sg1000": {
+			"id": 4949,
+			"name": "SEGA SG-1000",
+			"alias": "sg1000"
+		},
+		"sinclair-zx-spectrum": {
+			"id": 4913,
+			"name": "Sinclair ZX Spectrum",
+			"alias": "sinclair-zx-spectrum"
+		},
+		"sony-playstation": {
+			"id": 10,
+			"name": "Sony Playstation",
+			"alias": "sony-playstation"
+		},
+		"sony-playstation-2": {
+			"id": 11,
+			"name": "Sony Playstation 2",
+			"alias": "sony-playstation-2"
+		},
+		"sony-playstation-3": {
+			"id": 12,
+			"name": "Sony Playstation 3",
+			"alias": "sony-playstation-3"
+		},
+		"sony-playstation-4": {
+			"id": 4919,
+			"name": "Sony Playstation 4",
+			"alias": "sony-playstation-4"
+		},
+		"sony-playstation-vita": {
+			"id": 39,
+			"name": "Sony Playstation Vita",
+			"alias": "sony-playstation-vita"
+		},
+		"sony-psp": {
+			"id": 13,
+			"name": "Sony PSP",
+			"alias": "sony-psp"
+		},
+		"super-nintendo-snes": {
+			"id": 6,
+			"name": "Super Nintendo (SNES)",
+			"alias": "super-nintendo-snes"
+		},
+		"trs80-color": {
+			"id": 4941,
+			"name": "TRS-80 Color Computer",
+			"alias": "trs80-color"
+		},
+		"turbografx-16": {
+			"id": 34,
+			"name": "TurboGrafx 16",
+			"alias": "turbografx-16"
+		},
+		"vectrex": {
+			"id": 4939,
+			"name": "Vectrex",
+			"alias": "vectrex"
+		},
+		"wonderswan": {
+			"id": 4925,
+			"name": "WonderSwan",
+			"alias": "wonderswan"
+		},
+		"wonderswan-color": {
+			"id": 4926,
+			"name": "WonderSwan Color",
+			"alias": "wonderswan-color"
+		},
+		"x68000": {
+			"id": 4931,
+			"name": "X68000",
+			"alias": "x68000"
+		}
+	}
+}

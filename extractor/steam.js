@@ -2,8 +2,9 @@ var rp = require('request-promise');
 // var cheerio = require('cheerio');
 var util = require('util');
 var _ = require("lodash");
+var misc = require("../misc");
 
-exports.parse = function(id) {
+exports.get = function(id) {
     return new Promise(function(resolve, reject) {
       url = 'http://store.steampowered.com/app/' + id;
 
@@ -26,11 +27,10 @@ exports.parse = function(id) {
         genres: []
       };
 
-      var options = {
+      rp({
           uri: 'http://store.steampowered.com/api/appdetails/?appids=' + id
-      };
-
-      rp(options).then(function (result) {
+      })
+      .then(function (result) {
           result = JSON.parse(result);
           json.title = result[id]['data'].name;
           json.description = result[id]['data'].description;
@@ -56,21 +56,7 @@ exports.parse = function(id) {
 function getMediaResolutionFromUrl(url) {
     var dimentions = url.split('.').reverse()[1].split('x');
 
-    return getResolutionObject(dimentions[0], dimentions[1]);
-}
-
-function getResolutionObject(width, height) {
-    var resolution = {
-        ratio: null,
-        megapixels: null,
-        width: width,
-        height: height,
-    };
-
-    resolution.ratio = resolution.width / resolution.height;
-    resolution.megapixels = resolution.width * resolution.height / 1000000;
-
-    return resolution;
+    return misc.getResolutionObject(dimentions[0], dimentions[1]);
 }
 
 function getMediaObjects(type, json) {
@@ -101,7 +87,7 @@ function generateBannerImageObj(appid, size) {
     var img = {
       type: "banner",
       url: "http://cdn.akamai.steamstatic.com/steam/apps/" + appid + filename,
-      resolution: getResolutionObject(size[0], size[1])
+      resolution: misc.getResolutionObject(size[0], size[1])
     };
 
     return img;
