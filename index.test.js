@@ -3,9 +3,8 @@ var util = require('util');
 var _ = require('lodash');
 var chai = require('chai');
 var Promise = require('bluebird');
-var chaiAsPromised = require("chai-as-promised");
-chai.use(chaiAsPromised);
 var expect = require('chai').expect;
+var assert = require("assert");
 
 // characterize
 // .get('steam', 239030)
@@ -29,21 +28,48 @@ describe('characterize', function() {
       })
       .catch(done);
     });
+
+    it("should return an emepty array when nothing is found", function(done) {
+        var query = {
+          name: '89asd98yfy0wyh74f87whf0a87rfha87fh',
+          platform: 'super-nintendo-snes'
+        };
+
+        return characterize
+        .find('thegamesdb', query)
+        .then(function(results) {
+            expect(results).to.be.empty;
+            done();
+        })
+        .catch(done);
+    });
   });
 
   describe('findOne', function() {
-    it('should be an object', function(done) {
-      var query = {
+    var query = {};
+
+    beforeEach(function() {
+      query = {
         name: 'Super Mario World',
         platform: 'super-nintendo-snes'
       };
+    });
 
-      characterize.findOne('thegamesdb', query)
+    it('should be an object', function(done) {
+      return characterize
+      .findOne('thegamesdb', query)
       .then(function(results) {
           expect(results).to.be.an('object');
           done();
       })
       .catch(done);
+    });
+
+    it("should return an Error when called without specifying an extractor", function() {
+        return characterize.findOne('', query)
+        .catch(function(e) {
+            assert.equal(e.name, "ExtractorException");
+        });
     });
   });
 });

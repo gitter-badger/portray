@@ -10,20 +10,50 @@ var Promise = require('bluebird');
 //     console.log(err);
 // });
 
+function onlyResolved(arr) {
+  return Promise.all(arr.map(function(el) {
+      return el.reflect();
+  }))
+  .filter(function(p){
+      return p.isFulfilled();
+  })
+  .then(function (result) {
+    return Promise.mapSeries(result, function(item) {
+      return item.value();
+    });
+  });
+}
 
+var arr = [
+  new Promise(function(res, rej) {
+    res('a');
+  }),
+  Promise.reject('uh oh'),
+  Promise.resolve('yay 2'),
+];
 
-var query = {
-  name: 'Super Mario World',
-  platform: 'asuper-nintendo-snes'
-};
-
-characterize.findOne('thegamesdb', query)
-.then(function(results) {
-  console.log(results);
+onlyResolved(arr)
+.then(function (result) {
+  console.log(result);
 })
-.catch(function(err) {
-  console.log(err);
+.catch(function (err) {
+  console.error('Error:', err);
+  console.log('handled the error');
 })
+
+
+// var query = {
+//   name: 'Super Mario World',
+//   platform: 'asuper-nintendo-snes'
+// };
+//
+// characterize.findOne('thegamesdb', query)
+// .then(function(results) {
+//   console.log(results);
+// })
+// .catch(function(err) {
+//   console.log(err);
+// })
 
 // characterize
 // .find('thegamesdb', {
