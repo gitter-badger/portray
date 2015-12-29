@@ -62,7 +62,18 @@ function mapImageResults(results) {
     return arr;
 };
 
-exports.search = function(query) {
+
+function isPlatformSupported(platform) {
+  return _.some(map.platform, function(obj) {
+      return obj.alias === platform;
+  });
+}
+
+exports.find = function(query) {
+  if (!isPlatformSupported(query.platform)) {
+    return Promise.reject("Platform '" + query.platform + "' not supported");
+  }
+
   return gamesdb.GetGamesListAsync({
     name: query.name
   }).then(function(results) {
@@ -79,6 +90,17 @@ exports.search = function(query) {
     return Promise.resolve(results);
   })
 };
+
+exports.findOne = function(query) {
+  return exports.find(query)
+  .then(function(results) {
+      var bestMatch = _.max(results, function(o) {
+          return o.score;
+      });
+
+      return exports.get(bestMatch.id);
+  });
+}
 
 exports.get = function(id) {
   return gamesdb.GetGameAsync({

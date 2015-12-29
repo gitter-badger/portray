@@ -11,16 +11,53 @@ var Promise = require("bluebird");
 //     });
 // };
 
-exports.search = function(source, query) {
-    return require('./extractor/' + source)
-    .search(query)
+exports.find = function(source, query) {
+    var extractor = null;
+
+    try {
+        var extractor = require('./extractor/' + source);
+    }
+    catch (e) {
+        console.log(e);
+        throw "No extractor for '" + source + "' exists";
+    }
+
+    return extractor
+    .find(query)
+    .catch(function (err) {
+        console.log(err);
+    });
+};
+
+exports.findOne = function(source, query) {
+    var extractor = null;
+
+    try {
+        var extractor = require('./extractor/' + source);
+    }
+    catch (e) {
+        console.log(e);
+        throw "No extractor for '" + source + "' exists";
+    }
+
+    return extractor
+    .findOne(query)
     .catch(function (err) {
         console.log(err);
     });
 };
 
 exports.get = function(source, id) {
-    return require('./extractor/' + source)
+    var extractor = null;
+
+    try {
+        var extractor = require('./extractor/' + source);
+    }
+    catch (e) {
+        throw "No extractor for '" + source + "' exists";
+    }
+
+    return extractor
     .get(id)
     .catch(function (err) {
         console.log(err);
