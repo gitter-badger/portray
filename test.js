@@ -28,7 +28,7 @@ var arr = [
   new Promise(function(res, rej) {
     res('a');
   }),
-  Promise.reject('uh oh'),
+  Promise.reject(new Error("Platform 'hlfdss-df' not supported")),
   Promise.resolve('yay 2'),
 ];
 

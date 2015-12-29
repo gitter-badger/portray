@@ -71,7 +71,7 @@ function isPlatformSupported(platform) {
 
 exports.find = function(query) {
   if (!isPlatformSupported(query.platform)) {
-    return Promise.reject("Platform '" + query.platform + "' not supported");
+    return Promise.reject(new Error("Platform '" + query.platform + "' not supported"));
   }
 
   return gamesdb.GetGamesListAsync({

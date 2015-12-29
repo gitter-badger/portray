@@ -12,9 +12,11 @@ var Promise = require("bluebird");
 // };
 
 function ExtractorException(message) {
-  this.message = message;
   this.name = "ExtractorException";
+  this.message = message;
+  this.stack = (new Error()).stack;
 }
+ExtractorException.prototype = new Error;
 
 exports.find = function(source, query) {
     var extractor = null;
@@ -23,8 +25,9 @@ exports.find = function(source, query) {
         var extractor = require('./extractor/' + source);
     }
     catch (e) {
-        console.log(e);
-        throw "No extractor for '" + source + "' exists";
+        var msg = "No extractor for source:'" + source + "' exists";
+        var error = new ExtractorException(msg);
+        return Promise.reject(error);
     }
 
     return extractor
@@ -60,7 +63,9 @@ exports.get = function(source, id) {
         var extractor = require('./extractor/' + source);
     }
     catch (e) {
-        throw "No extractor for '" + source + "' exists";
+        var msg = "No extractor for source:'" + source + "' exists";
+        var error = new ExtractorException(msg);
+        return Promise.reject(error);
     }
 
     return extractor
