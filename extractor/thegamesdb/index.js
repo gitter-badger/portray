@@ -83,7 +83,7 @@ exports.find = function(query) {
   })
   .then(function(results) {
     results = _.filter(results, function(result) {
-      result.score = result.name.score(query.name);
+      result.score = result.name.score(query.name, 1);
       return result;
     });
 
