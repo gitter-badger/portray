@@ -1,4 +1,5 @@
 var Promise = require("bluebird");
+var _ = require("lodash");
 
 // Parse Datomatic XML fies for CRC
 // //datafile/game/rom[@crc='E359F184']/..
@@ -11,12 +12,21 @@ var Promise = require("bluebird");
 //     });
 // };
 
+function sortScoreDesc(collection) {
+  return _.sortByOrder(collection, ['score'], 'dec');
+}
+
+function scrubName(basename) {
+    return basename.replace(/(?:\ {1,}|[^a-zA-Z0-9])/gi, ' ')
+}
+
 function ExtractorException(message) {
   this.name = "ExtractorException";
   this.message = message;
   this.stack = (new Error()).stack;
 }
 ExtractorException.prototype = new Error;
+
 
 exports.find = function(source, query) {
     var extractor = null;
@@ -30,8 +40,11 @@ exports.find = function(source, query) {
         return Promise.reject(error);
     }
 
+    query = scrubName(query);
+
     return extractor
     .find(query)
+    .then(sortScoreDesc)
     .catch(function (err) {
         console.log(err);
     });
@@ -51,6 +64,7 @@ exports.findOne = function(source, query) {
 
     return extractor
     .findOne(query)
+    .then(sortScoreDesc)
     .catch(function (err) {
         console.log(err);
     });

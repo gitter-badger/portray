@@ -2,6 +2,12 @@ var characterize = require('./index');
 var util = require('util');
 var _ = require('lodash');
 var Promise = require('bluebird');
+require("string_score");
+
+// console.log(
+//   "Super Mario Bros. 2".score("Super Mario Bros 2", 1),
+//   "Super Mario Bros 2".score("Super Mario Bros. 2", 1)
+// );
 
 // characterize
 // .get('steam', 239030)
@@ -10,36 +16,36 @@ var Promise = require('bluebird');
 //     console.log(err);
 // });
 
-function onlyResolved(arr) {
-  return Promise.all(arr.map(function(el) {
-      return el.reflect();
-  }))
-  .filter(function(p){
-      return p.isFulfilled();
-  })
-  .then(function (result) {
-    return Promise.mapSeries(result, function(item) {
-      return item.value();
-    });
-  });
-}
-
-var arr = [
-  new Promise(function(res, rej) {
-    res('a');
-  }),
-  Promise.reject(new Error("Platform 'hlfdss-df' not supported")),
-  Promise.resolve('yay 2'),
-];
-
-onlyResolved(arr)
-.then(function (result) {
-  console.log(result);
-})
-.catch(function (err) {
-  console.error('Error:', err);
-  console.log('handled the error');
-})
+// function onlyResolved(arr) {
+//   return Promise.all(arr.map(function(el) {
+//       return el.reflect();
+//   }))
+//   .filter(function(p){
+//       return p.isFulfilled();
+//   })
+//   .then(function (result) {
+//     return Promise.mapSeries(result, function(item) {
+//       return item.value();
+//     });
+//   });
+// }
+//
+// var arr = [
+//   new Promise(function(res, rej) {
+//     res('a');
+//   }),
+//   Promise.reject(new Error("Platform 'hlfdss-df' not supported")),
+//   Promise.resolve('yay 2'),
+// ];
+//
+// onlyResolved(arr)
+// .then(function (result) {
+//   console.log(result);
+// })
+// .catch(function (err) {
+//   console.error('Error:', err);
+//   console.log('handled the error');
+// })
 
 
 // var query = {
@@ -55,11 +61,11 @@ onlyResolved(arr)
 //   console.log(err);
 // })
 
-// characterize
-// .find('thegamesdb', {
-//   platform: "super-nintendo-snes",
-//   name: "Sonic the hedgehog"
-// })
+characterize
+.find('thegamesdb', {
+  platform: "super-nintendo-snes",
+  name: "super mario world"
+})
 // .then(function(results) {
 //   var bestMatch = _.max(results, function(o) {
 //     return o.score;
@@ -67,13 +73,13 @@ onlyResolved(arr)
 //
 //   return characterize.get('thegamesdb', bestMatch.id);
 // })
-// .then(printResults)
-// .catch(function (err) {
-//     console.log(err);
-// });
-//
-// function printResults(data) {
-//   console.log(
-//    util.inspect(data, showHidden=false, depth=44, colorize=true)
-//   );
-// }
+.then(printResults)
+.catch(function (err) {
+    console.log(err);
+});
+
+function printResults(data) {
+  console.log(
+   util.inspect(data, showHidden=false, depth=44, colorize=true)
+  );
+}
