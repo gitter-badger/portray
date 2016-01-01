@@ -64,7 +64,7 @@ require("string_score");
 characterize
 .find('thegamesdb', {
   platform: "super-nintendo-snes",
-  name: "super mario world"
+  name: "super-mario-world.ext"
 })
 // .then(function(results) {
 //   var bestMatch = _.max(results, function(o) {

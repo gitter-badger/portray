@@ -1,5 +1,6 @@
 var Promise = require("bluebird");
 var _ = require("lodash");
+var path = require("path");
 
 // Parse Datomatic XML fies for CRC
 // //datafile/game/rom[@crc='E359F184']/..
@@ -17,7 +18,7 @@ function sortScoreDesc(collection) {
 }
 
 function scrubName(basename) {
-    return basename.replace(/(?:\ {1,}|[^a-zA-Z0-9])/gi, ' ')
+    return path.parse(basename).name.replace(/(?:\ {1,}|[^a-zA-Z0-9])/gi, ' ');
 }
 
 function ExtractorException(message) {
@@ -40,7 +41,7 @@ exports.find = function(source, query) {
         return Promise.reject(error);
     }
 
-    query = scrubName(query);
+    query.name = scrubName(query.name);
 
     return extractor
     .find(query)
