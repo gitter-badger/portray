@@ -104,16 +104,14 @@ exports.findOne = function(query) {
 
 exports.get = function(id) {
   return gamesdb.GetGameAsync({
-    id: id
+      id: id
   })
   .then(function(result) {
-    return Promise.resolve({
-      name: result.Game.GameTitle,
-      //platform: result.Game.PlatformId,
-      summary: result.Game.Overview,
-      media: {
-        images: mapImageResults(result)
-      }
-    });
+      var obj = {};
+      obj.summary = _.has(result, 'Game.Overview') ? result.Game.Overview : null;
+      obj.name = _.has(result, 'Game.GameTitle') ? result.Game.GameTitle : null;
+      // obj.media.images = _.pick(result, 'Game.GameTitle');
+
+      return Promise.resolve(obj);
   });
 };

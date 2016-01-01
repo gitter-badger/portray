@@ -61,11 +61,11 @@ require("string_score");
 //   console.log(err);
 // })
 
-characterize
-.find('thegamesdb', {
-  platform: "super-nintendo-snes",
-  name: "super-mario-world.ext"
-})
+// characterize
+// .find('thegamesdb', {
+//   platform: "super-nintendo-snes",
+//   name: "super-mario-world.ext"
+// })
 // .then(function(results) {
 //   var bestMatch = _.max(results, function(o) {
 //     return o.score;
@@ -73,6 +73,8 @@ characterize
 //
 //   return characterize.get('thegamesdb', bestMatch.id);
 // })
+characterize
+.get('thegamesdb', 25913)
 .then(printResults)
 .catch(function (err) {
     console.log(err);
