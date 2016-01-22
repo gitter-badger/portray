@@ -1,4 +1,4 @@
-var characterize = require('./index');
+var portray = require('./index');
 var util = require('util');
 var _ = require('lodash');
 var Promise = require('bluebird');
@@ -9,7 +9,7 @@ require("string_score");
 //   "Super Mario Bros 2".score("Super Mario Bros. 2", 1)
 // );
 
-// characterize
+// portray
 // .get('steam', 239030)
 // .then(printResults)
 // .catch(function (err) {
@@ -53,7 +53,7 @@ require("string_score");
 //   platform: 'asuper-nintendo-snes'
 // };
 //
-// characterize.findOne('thegamesdb', query)
+// portray.findOne('thegamesdb', query)
 // .then(function(results) {
 //   console.log(results);
 // })
@@ -61,7 +61,7 @@ require("string_score");
 //   console.log(err);
 // })
 
-// characterize
+// portray
 // .find('thegamesdb', {
 //   platform: "super-nintendo-snes",
 //   name: "super-mario-world.ext"
@@ -71,10 +71,10 @@ require("string_score");
 //     return o.score;
 //   });
 //
-//   return characterize.get('thegamesdb', bestMatch.id);
+//   return portray.get('thegamesdb', bestMatch.id);
 // })
-characterize
-.get('thegamesdb', 25913)
+portray
+.get('thegamesdb', 16778)
 .then(printResults)
 .catch(function (err) {
     console.log(err);

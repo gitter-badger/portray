@@ -1,4 +1,4 @@
-var characterize = require('./index');
+var portray = require('./index');
 var util = require('util');
 var _ = require('lodash');
 var chai = require('chai');
@@ -6,14 +6,14 @@ var Promise = require('bluebird');
 var expect = require('chai').expect;
 var assert = require("assert");
 
-// characterize
+// portray
 // .get('steam', 239030)
 // .then(printResults)
 // .catch(function (err) {
 //     console.log(err);
 // });
 
-describe('characterize', function() {
+describe('portray', function() {
   describe('find', function() {
     it('should be an array', function(done) {
       var query = {
@@ -21,7 +21,7 @@ describe('characterize', function() {
         platform: 'super-nintendo-snes'
       };
 
-      characterize.find('thegamesdb', query)
+      portray.find('thegamesdb', query)
       .then(function(results) {
           expect(results).to.be.an('array');
           done();
@@ -35,7 +35,7 @@ describe('characterize', function() {
           platform: 'super-nintendo-snes'
         };
 
-        return characterize
+        return portray
         .find('thegamesdb', query)
         .then(function(results) {
             expect(results).to.be.empty;
@@ -56,7 +56,7 @@ describe('characterize', function() {
     });
 
     it('should be an object', function(done) {
-      return characterize
+      return portray
       .findOne('thegamesdb', query)
       .then(function(results) {
           expect(results).to.be.an('object');
@@ -66,7 +66,7 @@ describe('characterize', function() {
     });
 
     it("should return an Error when called without specifying an extractor", function() {
-        return characterize.findOne('', query)
+        return portray.findOne('', query)
         .catch(function(e) {
             assert.equal(e.name, "ExtractorException");
         });
@@ -74,7 +74,7 @@ describe('characterize', function() {
   });
 });
 
-// characterize
+// portray
 // .find('thegamesdb', {
 //   platform: "super-nintendo-snes",
 //   name: "Sonic the hedgehog"
@@ -84,7 +84,7 @@ describe('characterize', function() {
 //     return o.score;
 //   });
 //
-//   return characterize.get('thegamesdb', bestMatch.id);
+//   return portray.get('thegamesdb', bestMatch.id);
 // })
 // .then(printResults)
 // .catch(function (err) {

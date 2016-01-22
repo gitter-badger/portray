@@ -1,23 +1,36 @@
 {
-  "name": "characterize",
-  "version": "0.0.1",
-  "description": "Obtain metadata for games",
-  "main": "index.js",
-  "author": "Simon W. Jackson",
-  "scripts": {
-    "test": "mocha index.test.js -w"
-  },
-  "dependencies": {
-    "bluebird": "^3.1.1",
-    "cheerio": "latest",
-    "lodash": "^3.10.1",
-    "request-promise": "^1.0.2",
-    "string_score": "^0.1.22",
-    "tgdb-api": "^0.2.1"
-  },
-  "devDependencies": {
-    "chai": "^3.4.1",
-    "chai-as-promised": "^5.2.0",
-    "mocha": "^2.3.4"
-  }
+    "name": "portray",
+    "version": "0.0.2",
+    "description": "A multisource game metadata fetcher",
+    "main": "index.js",
+    "author": "Simon W. Jackson",
+    "scripts": {
+        "test": "mocha index.test.js -w"
+    },
+    "dependencies": {
+        "bluebird": "^3.1.1",
+        "cheerio": "^0.19.0",
+        "lodash": "^3.10.1",
+        "request-promise": "^1.0.2",
+        "string_score": "^0.1.22",
+        "tgdb-api": "^0.2.1"
+    },
+    "devDependencies": {
+        "chai": "^3.4.1",
+        "chai-as-promised": "^5.2.0",
+        "mocha": "^2.3.4"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/miniArray/portray.git"
+    },
+    "keywords": [
+        "games",
+        "api"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/miniArray/portray/issues"
+    },
+    "homepage": "https://github.com/miniArray/portray#readme"
 }
