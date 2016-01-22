@@ -19,4 +19,6 @@
 
 # portray
 
+[![Join the chat at https://gitter.im/miniArray/portray](https://badges.gitter.im/miniArray/portray.svg)](https://gitter.im/miniArray/portray?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A multisource game metadata fetcher
